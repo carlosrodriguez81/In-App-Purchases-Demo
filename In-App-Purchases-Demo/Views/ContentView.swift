@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var productsStore: ProductsStore
+    @EnvironmentObject var observableSettings: ObservableSettings
     @State var showStoreView = false
     
     var body: some View {
@@ -17,9 +18,7 @@ struct ContentView: View {
             HStack {
                 Text("In-App Purchases").font(.title).bold()
                 Spacer()
-                if !productsStore.hideAds {
-                    shoppingCartButton
-                }
+                shoppingCartButton
             }
             .padding()
             //-->[end]
@@ -29,7 +28,7 @@ struct ContentView: View {
                     .foregroundColor(Color("White"))
                     .background(Color.primary)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
-                if !productsStore.hideAds {
+                if !observableSettings.removeAds {
                     Image("ImageAd")
                         .renderingMode(.original)
                         .resizable()
@@ -38,7 +37,10 @@ struct ContentView: View {
                 Spacer()
             }
             .sheet(isPresented: $showStoreView, content: {
-                RemoveAdsView(productStore: self.productsStore, myProduct: productsStore.products.first!)
+                //SwiftyStoreKit
+                PurchasesView()
+                //IAPManager ->
+                //RemoveAdsView(productStore: self.productsStore, myProduct: productsStore.products.first!)
             })
             .edgesIgnoringSafeArea(.bottom)
             //-->[begin] - uncomment for test

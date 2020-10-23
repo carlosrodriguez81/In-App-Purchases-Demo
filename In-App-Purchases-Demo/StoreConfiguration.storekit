@@ -1,12 +1,12 @@
 {
   "products" : [
     {
-      "displayPrice" : "1.99",
+      "displayPrice" : "0.99",
       "familyShareable" : false,
       "internalID" : "95F39830",
       "localizations" : [
         {
-          "description" : "No description yet",
+          "description" : "Remove Ads for Life",
           "displayName" : "Remove Ads for Life",
           "locale" : "en_US"
         }

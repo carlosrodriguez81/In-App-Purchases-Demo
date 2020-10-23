@@ -11,6 +11,8 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    var observableSettings = ObservableSettings()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -21,8 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ProductsStore.shared.initializeProducts()
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView(productsStore: ProductsStore.shared)
-        //let contentView = ContentView()
+        let contentView = ContentView(productsStore: ProductsStore.shared).environmentObject(observableSettings)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

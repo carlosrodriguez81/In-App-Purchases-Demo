@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3E2E0BF325212C480095954F /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2E0BF225212C480095954F /* General.swift */; };
 		3E328153251CE249001606D5 /* ProductsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E328152251CE249001606D5 /* ProductsStore.swift */; };
 		3E32816F251D2758001606D5 /* PurchaseButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E32816E251D2758001606D5 /* PurchaseButtonView.swift */; };
+		3EAC3AB3254324C1000E8035 /* PurchasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EAC3AB2254324C1000E8035 /* PurchasesView.swift */; };
+		3EAC3AB725432522000E8035 /* SwiftyStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3EAC3AB625432522000E8035 /* SwiftyStoreKit */; };
 		3EBBC3772518FC1A00D8BECD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBC3762518FC1A00D8BECD /* AppDelegate.swift */; };
 		3EBBC3792518FC1A00D8BECD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBC3782518FC1A00D8BECD /* SceneDelegate.swift */; };
 		3EBBC37B2518FC1A00D8BECD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBC37A2518FC1A00D8BECD /* ContentView.swift */; };
@@ -26,6 +28,7 @@
 		3E328152251CE249001606D5 /* ProductsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsStore.swift; sourceTree = "<group>"; };
 		3E32816C251D2403001606D5 /* StoreConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreConfiguration.storekit; sourceTree = "<group>"; };
 		3E32816E251D2758001606D5 /* PurchaseButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButtonView.swift; sourceTree = "<group>"; };
+		3EAC3AB2254324C1000E8035 /* PurchasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesView.swift; sourceTree = "<group>"; };
 		3EBBC3732518FC1A00D8BECD /* In-App-Purchases-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "In-App-Purchases-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBBC3762518FC1A00D8BECD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EBBC3782518FC1A00D8BECD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EBBC38D2518FC9600D8BECD /* StoreKit.framework in Frameworks */,
+				3EAC3AB725432522000E8035 /* SwiftyStoreKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +69,7 @@
 			children = (
 				3EBBC37A2518FC1A00D8BECD /* ContentView.swift */,
 				3EBBC38F251902F600D8BECD /* RemoveAdsView.swift */,
+				3EAC3AB2254324C1000E8035 /* PurchasesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +149,9 @@
 			dependencies = (
 			);
 			name = "In-App-Purchases-Demo";
+			packageProductDependencies = (
+				3EAC3AB625432522000E8035 /* SwiftyStoreKit */,
+			);
 			productName = "In-App-Purchases-Demo";
 			productReference = 3EBBC3732518FC1A00D8BECD /* In-App-Purchases-Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -171,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 3EBBC36A2518FC1A00D8BECD;
+			packageReferences = (
+				3EAC3AB525432522000E8035 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */,
+			);
 			productRefGroup = 3EBBC3742518FC1A00D8BECD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,6 +212,7 @@
 				3EBBC3772518FC1A00D8BECD /* AppDelegate.swift in Sources */,
 				3E32816F251D2758001606D5 /* PurchaseButtonView.swift in Sources */,
 				3EBBC39B2519341900D8BECD /* IAPManager.swift in Sources */,
+				3EAC3AB3254324C1000E8035 /* PurchasesView.swift in Sources */,
 				3EBBC3792518FC1A00D8BECD /* SceneDelegate.swift in Sources */,
 				3E328153251CE249001606D5 /* ProductsStore.swift in Sources */,
 				3EBBC37B2518FC1A00D8BECD /* ContentView.swift in Sources */,
@@ -403,6 +415,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3EAC3AB525432522000E8035 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bizz84/SwiftyStoreKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3EAC3AB625432522000E8035 /* SwiftyStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EAC3AB525432522000E8035 /* XCRemoteSwiftPackageReference "SwiftyStoreKit" */;
+			productName = SwiftyStoreKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EBBC36B2518FC1A00D8BECD /* Project object */;
 }
